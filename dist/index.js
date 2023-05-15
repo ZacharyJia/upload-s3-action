@@ -28907,6 +28907,8 @@ const ENDPOINT = core.getInput('endpoint', {
 const s3options = {
   accessKeyId: AWS_KEY_ID,
   secretAccessKey: SECRET_ACCESS_KEY,
+  s3ForcePathStyle: true, // 使用路径风格访问，这在 MinIO 中是必需的
+  signatureVersion: 'v4', // 使用签名版本 v4，这在 MinIO 中也是必需的
 };
 
 if (ENDPOINT) {
